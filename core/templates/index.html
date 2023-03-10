@@ -1,3 +1,5 @@
+{%load static%}
+
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -6,6 +8,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Django 1 - Index</title>
+
+    <link rel="stylesheet" href=" {% static '/css/style.css' %}  ">
+
 </head>
 <body>
     <h1>Index</h1>
@@ -15,7 +20,7 @@
             <tr>
                 <th>Produto</th>
                 <th>Preço</th>
-            </tr>g
+            </tr>
         </thead>
         <tbody>
             {% for produto in produtos %}
@@ -25,7 +30,9 @@
             </tr>
             {% endfor %}
         </tbody>
-
     </table>
+
+    <button onclick="falar_oi();">Clique-me</button>
+    <script src=" {% static 'js/script.js' %} "></script>
 </body>
 </html>
