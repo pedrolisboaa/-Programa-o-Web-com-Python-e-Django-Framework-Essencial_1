@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-s+$@iaw-j7h9khepqpa!h049de+i-_i2rv-uk4_$z@-f1-e&$k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Para produção
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -57,7 +58,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['templates'],
         'APP_DIRS': True,
-        'OPTIONS': {
+        'OPTIONS': {''
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
